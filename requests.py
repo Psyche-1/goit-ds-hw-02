@@ -108,8 +108,8 @@ if __name__ == '__main__':
 
     sql = """
     SELECT u.id, u.fullname, u.email, COUNT(t.user_id) as total_tasks
-    FROM tasks AS t
-    LEFT JOIN users AS u ON u.id = t.user_id
+    FROM users AS u
+    LEFT JOIN tasks AS t ON u.id = t.user_id
     GROUP BY u.id
     """
     # pprint(execute_query(sql))
